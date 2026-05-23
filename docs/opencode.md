@@ -53,12 +53,13 @@ cat > ~/.config/opencode/opencode.json <<'EOF'
         "gemini-pro-agent": { "id": "gemini-pro-agent", "name": "Gemini 3.1 Pro Agent" },
         "gemini-3.1-pro-low": { "id": "gemini-3.1-pro-low", "name": "Gemini 3.1 Pro Low" },
         "gemini-3.1-flash-lite": { "id": "gemini-3.1-flash-lite", "name": "Gemini 3.1 Flash Lite" },
-        "gemini-3.1-flash-image": { "id": "gemini-3.1-flash-image", "name": "Gemini 3.1 Flash Image" }
+        "gemini-3.1-flash-image": { "id": "gemini-3.1-flash-image", "name": "Gemini 3.1 Flash Image" },
+        "gemini-3.5-flash-low": { "id": "gemini-3.5-flash-low", "name": "Gemini 3.5 Flash" }
       }
     }
   },
   "model": "antigravity/claude-sonnet-4-6",
-  "small_model": "antigravity/gemini-3-flash"
+  "small_model": "antigravity/gemini-3.5-flash-low"
 }
 EOF
 ```
@@ -102,11 +103,10 @@ Inside OpenCode, all registered models appear as `antigravity/<model-id>`. The `
 | `gemini-3-flash` | Gemini | Fast, lightweight |
 | `gemini-3-flash-agent` | Gemini | Agentic workflows |
 | `gemini-pro-agent` | Gemini | Agentic workflows |
-| `gemini-3.1-pro-low` | Gemini | Strong reasoning |
+| `gemini-3.1-pro-low` | Gemini | Strong reasoning, 1M context |
 | `gemini-3.1-flash-lite` | Gemini | Lightweight tasks |
 | `gemini-3.1-flash-image` | Gemini | Vision/image tasks |
-
-`gemini-3.1-pro-high` is currently returning `400 INVALID_ARGUMENT` from Google's backend. Use `gemini-3.1-pro-low` instead.
+| `gemini-3.5-flash-low` | Gemini | Fast tasks, `small_model` recommended |
 
 ## Verify Configuration
 
@@ -126,7 +126,7 @@ Your `baseURL` is missing `/v1`. Set it to `http://localhost:8080/v1`, not `http
 
 ### Model returns `400 INVALID_ARGUMENT`
 
-The model is rejected by Google's backend. Remove it from your `models` block. Known affected model: `gemini-3.1-pro-high`.
+The model is rejected by Google's backend. Remove it from your `models` block.
 
 ### Models not appearing in picker
 

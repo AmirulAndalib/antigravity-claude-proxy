@@ -19,7 +19,7 @@ import { existsSync, readFileSync } from 'fs';
  */
 
 // Fallback for User-Agent version (ideVersion in product.json)
-const FALLBACK_USER_AGENT_VERSION = process.env.FALLBACK_ANTIGRAVITY_VERSION || '1.23.2';
+const FALLBACK_USER_AGENT_VERSION = process.env.FALLBACK_ANTIGRAVITY_VERSION || '2.0.3';
 
 // Fallback for X-Client-Version (top-level "version" in product.json)
 // Can be overridden via ANTIGRAVITY_CLIENT_VERSION_FALLBACK env var
